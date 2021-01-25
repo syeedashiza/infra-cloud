@@ -4,7 +4,7 @@ pipeline {
         dockerfile true
     }
     stages {
-        stage('Get Report') {
+        stage('Checkout Report') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sachinrawat1111/Project']]])
                              
@@ -19,9 +19,16 @@ pipeline {
            def scannerHome = tool 'sonarqube';
            withSonarQubeEnv("sonarqube-container") 
            {
-            sh "${tool("sonarqube")}/bin/sonar-scanner 
+            sh "${tool("sonarqube")}/Project/Programs/sonar-scanner 
            }
           }
+         }
+        }
+        stage('HTML Report')
+        {
+         steps
+         {
+           sh 'google-chrome /Project/HTML/index.html'
          }
         }
     }
