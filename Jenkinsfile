@@ -19,7 +19,7 @@ pipeline {
            def scannerHome = tool 'sonarqube';
            withSonarQubeEnv("sonarqube-container") 
            {
-            sh "${tool("sonarqube")}/Project/Programs/sonar-scanner 
+            sh "${tool("sonarqube")}/Project/Programs/sonar-scanner" 
            }
           }
          }
