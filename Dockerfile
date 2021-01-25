@@ -3,7 +3,9 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt install -y python3
 RUN apt install -y git
-ADD . /usr/src/Project
+RUN mkdir /usr/src/Project
+WORKDIR /usr/src/
+RUN git clone https://github.com/sachinrawat1111/Project.git
 WORKDIR /usr/src/Project/Programs
 RUN python3 Calculator.py
 RUN python3 Calculator_Test.py
@@ -21,6 +23,7 @@ RUN git add Programs
 RUN git add HTML
 RUN git commit -m "Initial Commit"
 RUN git branch -M main
+RUN git remote rm origin
 RUN git remote add origin https://sachinrawat1111:10India2020@github.com/sachinrawat1111/Project.git
 RUN git push -u origin main
 CMD echo 'Report Generated'
