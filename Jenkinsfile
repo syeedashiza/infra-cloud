@@ -14,14 +14,14 @@ pipeline {
         {
          steps
          {
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Scanner/HTML', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Demo3/HTML', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
          }
         }
         stage('Coverage Report')
         {
          steps
          {
-           publishCoverage adapters: [sonarGenericCoverageAdapter('var/lib/jenkins/workspace/Scanner/HTML')] 
+           publishCoverage adapters: [sonarGenericCoverageAdapter('var/lib/jenkins/workspace/Demo3/Programs')] 
          }
         }    
     }
