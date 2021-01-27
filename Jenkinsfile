@@ -22,6 +22,7 @@ pipeline {
          steps
          {
            publishCoverage adapters: [sonarGenericCoverageAdapter('var/lib/jenkins/workspace/Scanner/HTML')] 
-        }
+         }
+        }    
     }
 }
