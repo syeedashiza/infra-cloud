@@ -11,7 +11,7 @@ pipeline
             steps 
             {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sachinrawat1111/Project']]])
-                             
+   
             }
         }
         stage('HTML Report')
@@ -26,7 +26,7 @@ pipeline
          steps
          {
            publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/Demo3/Programs/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')         }
-         }    
+         } 
+        }
         }
      }
-}
