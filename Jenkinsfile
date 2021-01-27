@@ -14,7 +14,7 @@ pipeline {
         {
          steps
          {
-           sh 'google-chrome /Project/HTML/index.html'
+           echo '/Project/HTML/index.html'
          }
         }
     }
