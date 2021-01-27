@@ -21,8 +21,8 @@ pipeline {
         {
          steps
          {
-           publishCoverage adapters: [sonarGenericCoverageAdapter('var/lib/jenkins/workspace/Demo3/Programs/coverage.xml')] 
-         }
-        }    
-    }
+           publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/Demo3/Programs/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')         }
+         }    
+        }
+     }
 }
