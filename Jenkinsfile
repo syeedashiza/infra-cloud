@@ -14,7 +14,7 @@ pipeline {
         {
          steps
          {
-           echo '/Project/HTML/index.html'
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/Project/HTML/', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
          }
         }
     }
