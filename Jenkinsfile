@@ -1,11 +1,15 @@
-pipeline {
+pipeline
+{
     agent 
     { 
         dockerfile true
     }
-    stages {
-        stage('Checkout Report') {
-            steps {
+    stages
+    {
+        stage('Checkout Report') 
+        {
+            steps 
+            {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sachinrawat1111/Project']]])
                              
             }
