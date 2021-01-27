@@ -10,20 +10,6 @@ pipeline {
                              
             }
         }
-        stage('Sonarqube')
-        {
-         steps
-         {
-          script
-          {
-           def scannerHome = tool 'SonarQube Scanner 4.6.0.2311';
-           withSonarQubeEnv("SonarQube Scanner 4.6.0.2311") 
-           {
-            sh "${tool("sonarqube")}/bin/sonar-scanner" 
-           }
-          }
-         }
-        }
         stage('HTML Report')
         {
          steps
