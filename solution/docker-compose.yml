@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+   csvserver:
+     image: infracloudio/csvserver:latest
+     volumes:
+       - C:\\Users\\banuc\\Desktop\\csvserver\\solution\\inputFile:/csvserver/inputdata
+     environment:
+       CSVSERVER_BORDER: Orange
+     ports:
+       - "127.0.0.1:9393:9300"
