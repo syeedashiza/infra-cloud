@@ -9,3 +9,11 @@ services:
        CSVSERVER_BORDER: Orange
      ports:
        - "127.0.0.1:9393:9300"
+    
+   prometheus:
+     image: prom/prometheus:v2.22.0
+     volumes:
+       - C:\\Users\\banuc\\Desktop\\csvserver\\solution\\prometheus.yml:/etc/prometheus/prometheus.yml
+     ports:
+       - "127.0.0.1:9090:9090"
+
