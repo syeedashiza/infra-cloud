@@ -20,5 +20,5 @@ cat inputFile
 ```sh
 docker run -d -p 127.0.0.1:9393:9300 -v <inputFile path here>:/csvserver/inputdata -e CSVSERVER_BORDER='Orange' infracloudio/csvserver:latest
 ```
-#####  The application is accessible at http://localhost:9393,it has 10 entries from inputFile and the welcome note with orange color border.
+#####  The application is accessible at http://localhost:9393, it has 10 entries from inputFile and the welcome note with orange color border.
 
