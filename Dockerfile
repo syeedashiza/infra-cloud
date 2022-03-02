@@ -5,7 +5,7 @@ RUN apt install -y python3
 RUN apt install -y git
 RUN mkdir /usr/src/Project
 WORKDIR /usr/src/
-RUN git clone https://github.com/sachinrawat1111/Project.git
+RUN git clone https://github.com/syeedashiza/infra-cloud.git
 WORKDIR /usr/src/Project/Programs
 RUN python3 Calculator.py
 RUN python3 Calculator_Test.py
@@ -18,12 +18,12 @@ RUN coverage xml
 RUN coverage html -d /usr/src/Project/HTML
 WORKDIR /usr/src/Project/
 RUN git init
-RUN git config --global user.email "sachin.rawat@stryker.com"
+RUN git config --global user.email "syeedashiza@gmail.com"
 RUN git add Programs
 RUN git add HTML
 RUN git commit -m "Initial Commit"
-RUN git branch -M main
+RUN git branch -M report
 RUN git remote rm origin
-RUN git remote add origin https://sachinrawat1111:10India2020@github.com/sachinrawat1111/Project.git
-RUN git push -u origin main
+RUN git remote add origin https://github.com/syeedashiza/infra-cloud.git
+RUN git push -u origin report
 CMD echo 'Report Generated'
