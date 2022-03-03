@@ -7,8 +7,6 @@ RUN mkdir /usr/src/Project
 WORKDIR /usr/src/
 RUN git clone https://github.com/syeedashiza/infra-cloud.git
 WORKDIR /usr/src/Project/Programs
-RUN dos2unix Calculator.py
-RUN dos2unix Calculator_Test.py
 RUN chmod +x Calculator.py
 RUN chmod +x Calculator_Test.py
 RUN python3 Calculator.py
