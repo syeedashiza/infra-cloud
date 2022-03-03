@@ -5,7 +5,7 @@ RUN apt install -y python3
 RUN apt install -y git
 RUN mkdir /usr/src/Project
 WORKDIR /usr/src/
-RUN git clone https://github.com/syeedashiza/infra-cloud.git
+RUN git clone https://github.com/sachinrawat1111/Project.git
 WORKDIR /usr/src/Project/Programs
 RUN chmod +x Calculator.py
 RUN chmod +x Calculator_Test.py
@@ -24,8 +24,4 @@ RUN git config --global user.email "syeedashiza@gmail.com"
 RUN git add Programs
 RUN git add HTML
 RUN git commit -m "Initial Commit"
-RUN git branch -M report
-RUN git remote rm origin
-RUN git remote add origin https://github.com/syeedashiza/infra-cloud.git
-RUN git push -u origin report
 CMD echo 'Report Generated'
