@@ -25,7 +25,7 @@ pipeline
         {
          steps
          {
-           publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/Demo3/test-report/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')      
+           publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/test-report/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')      
          }
          } 
         }
