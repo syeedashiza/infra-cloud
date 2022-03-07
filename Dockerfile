@@ -14,9 +14,8 @@ RUN python3 Calculator_Test.py
 RUN apt update
 RUN apt install --yes python3-pip
 RUN pip3 install coverage 
-RUN coverage run Calculator_Test.py
-RUN coverage report
-RUN coverage xml 
+RUN python -m coverage Calculator_Test.py
+RUN coverage xml -d /usr/src/Project/report
 RUN coverage html -d /usr/src/Project/HTML
 WORKDIR /usr/src/Project/
 RUN git init
