@@ -18,14 +18,14 @@ pipeline
         {
          steps
          {
-           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/report/HTML', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+           publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/test-report/HTML', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
          }
         }
         stage('Coverage Report')
         {
          steps
          {
-           publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/Demo3/report/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')      
+           publishCoverage adapters: [istanbulCoberturaAdapter('var/lib/jenkins/workspace/Demo3/test-report/coverage.xml')], sourceFileResolver: sourceFiles('NEVER_STORE')      
          }
          } 
         }
